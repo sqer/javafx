@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Normal xml file | xml definition above is not required -->
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+
+<!-- every template has one single controler -->
+<VBox prefHeight="300" prefWidth="500" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="javafx.controler.FxmlControler">
+	<HBox>
+		<Label text="Label Example" />
+		<Button text="Button Example" />
+	</HBox>
+	<HBox>
+		<Label text="Black" fx:id="labelForButton" />
+		<Button text="Button with action" fx:id="buttonWithAction"
+			onAction="#buttonOnAction" />
+	</HBox>
+	<HBox>
+		<!-- bind example -->
+		<Label text="${labelForButton.text}" />
+	</HBox>
+	<!-- reusable components -->
+	<fx:define>
+		<ToggleGroup fx:id="toggleGroup" />
+	</fx:define>
+	<HBox>
+		<RadioButton text="Java" toggleGroup="${toggleGroup}" />
+		<RadioButton text="C++" toggleGroup="${toggleGroup}" />
+		<RadioButton text="C#" toggleGroup="${toggleGroup}" />
+	</HBox>
+</VBox>
+
